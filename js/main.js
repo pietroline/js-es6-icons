@@ -61,7 +61,7 @@ function randomColor(){
             const numero = Math.floor(Math.random() * 10); //numero random tra 0 e 9
             ritorno += numero;
         }else{
-            const numeroLettera = Math.floor(Math.random() * 6 + 65); //numero compreso tra 65 e 70, codice ascii corrispondente da A a Z
+            const numeroLettera = Math.floor(Math.random() * 6 + 65); //numero compreso tra 65 e 70, codice ascii corrispondente da A a F
             const lettera = String.fromCharCode(numeroLettera);
             ritorno += lettera;
         }
