@@ -77,16 +77,30 @@ function randomColor(){
 
 
 //select() popola dinamicamente il select nel DOM 
-function select(){
+function select(icons){
 
-    let option = "";
-    option +=   `
-                    <option value="tutti">Tutti</option>
-                    <option value="user">Utente</option>
-                    <option value="animal">Animale</option>
-                    <option value="vegetable">Vegetale</option>
-                `;
+    typeArray = [];
+    for (let i=0; i<icons.length; i++){
+        if(!typeArray.includes(icons[i].type)){
+            typeArray[i] = icons[i].type;
+        }
+    }
 
+    const newTypeArray =  typeArray.filter(type => {
+
+        if(type != undefined){
+            return true;
+        }
+        return false;
+
+    });
+
+    let option = `<option value="tutti">Tutti</option>`;
+    for(let i=0; i<3; i++){
+        option +=   `
+                        <option value="${newTypeArray[i]}">${newTypeArray[i]}</option>
+                    `;
+    }
 
     const select = document.getElementById("filtro");
     select.innerHTML = option;
@@ -228,7 +242,7 @@ const icone = [
 drawIcons("icons_container", icone);
 
 //popolo le options dinamicamente
-select();
+select(icone);
 
 
 //filtraggio delle icone visualizzate tramite select dall'utente
