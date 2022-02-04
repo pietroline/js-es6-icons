@@ -18,6 +18,8 @@ function drawIcons(riferimentoContainerHTML, ArrayIcone){
 
 };
 
+
+
 //filtraggioIcone si occupa di effettuare il filtraggio delle icone 
 //in base al valore di select selezionato dall'utente
 function filtraggioIcone(){
@@ -43,7 +45,8 @@ function filtraggioIcone(){
 
         drawIcons("icons_container", newIcone);
 
-}
+};
+
 
 
 //randomColor() si occupa di generare dei colori esadecimali random
@@ -69,9 +72,30 @@ function randomColor(){
     }
 
     return ritorno;
-}
+};
+
+
+
+//select() popola dinamicamente il select nel DOM 
+function select(){
+
+    let option = "";
+    option +=   `
+                    <option value="tutti">Tutti</option>
+                    <option value="user">Utente</option>
+                    <option value="animal">Animale</option>
+                    <option value="vegetable">Vegetale</option>
+                `;
+
+
+    const select = document.getElementById("filtro");
+    select.innerHTML = option;
+
+};
 
  
+
+
 
 const animalColor = randomColor();
 const vegetableColor = randomColor();
@@ -195,12 +219,16 @@ const icone = [
 
 
 
+
 //-------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
 drawIcons("icons_container", icone);
+
+//popolo le option dinamicamente
+select();
 
 
 //filtraggio delle icone visualizzate tramite select dall'utente
