@@ -227,7 +227,7 @@ const icone = [
 
 drawIcons("icons_container", icone);
 
-//popolo le option dinamicamente
+//popolo le options dinamicamente
 select();
 
 
