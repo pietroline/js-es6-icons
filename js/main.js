@@ -1,3 +1,24 @@
+//drawIcons(riferimentoContainerHTML, ArrayIcons) si oppuca di fare append delle caselle su DOM
+//riferimentoContainerHTML --> stringa contenente id su cui effettuare append
+// ArrayIcone --> Array di oggetti descriventi le icone
+function drawIcons(riferimentoContainerHTML, ArrayIcone){
+
+    let box = "";
+    ArrayIcone.forEach(oggettoIcona =>{
+
+        box += `<div class="box">
+                    <i class="${oggettoIcona.family} ${oggettoIcona.prefix}${oggettoIcona.name}"></i>
+                    <div class="text">${oggettoIcona.name}</div>
+                </div>`;
+
+    });
+
+    const iconsContainer = document.getElementById(riferimentoContainerHTML);
+    iconsContainer.innerHTML = box;
+
+};
+
+
 const icone = [
 	{
 		name: 'cat',
@@ -112,3 +133,13 @@ const icone = [
 		color: 'blue'
 	}
 ];
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+drawIcons("icons_container", icone);
