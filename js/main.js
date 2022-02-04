@@ -7,7 +7,7 @@ function drawIcons(riferimentoContainerHTML, ArrayIcone){
     ArrayIcone.forEach(oggettoIcona =>{
 
         box += `<div class="box">
-                    <i class="${oggettoIcona.family} ${oggettoIcona.prefix}${oggettoIcona.name}"></i>
+                    <i style="color:${oggettoIcona.color};" class="${oggettoIcona.family} ${oggettoIcona.prefix}${oggettoIcona.name}"></i>
                     <div class="text">${oggettoIcona.name}</div>
                 </div>`;
 
