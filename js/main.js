@@ -18,6 +18,33 @@ function drawIcons(riferimentoContainerHTML, ArrayIcone){
 
 };
 
+function filtraggioIcone(){
+    const filtro = document.getElementById("filtro");
+    filtro.addEventListener("change", function(){
+
+        const valoreSelezionato = this.value;
+        let newIcone;
+
+        if(valoreSelezionato == "tutti"){
+            newIcone = icone;
+        }else if(valoreSelezionato == "animal" || valoreSelezionato == "user" || valoreSelezionato == "vegetable"){
+            newIcone =  icone.filter(oggettoIcona => {
+
+                if(valoreSelezionato == oggettoIcona.type){
+                    return true;
+                }
+                return false;
+        
+            });
+
+        }else{
+            alert("Errore critico! Contattare l'assistenza!!!");
+        }
+
+        drawIcons("icons_container", newIcone);
+
+    });
+}
 
 const icone = [
 	{
@@ -146,30 +173,4 @@ drawIcons("icons_container", icone);
 
 
 //filtraggio delle icone visualizzate tramite select dall'utente
-const filtro = document.getElementById("filtro");
-filtro.addEventListener("change", function(){
-
-    const valoreSelezionato = this.value;
-    let newIcone;
-
-    if(valoreSelezionato == "tutti"){
-        newIcone = icone;
-    }else if(valoreSelezionato == "animal" || valoreSelezionato == "user" || valoreSelezionato == "vegetable"){
-        newIcone =  icone.filter(oggettoIcona => {
-
-            if(valoreSelezionato == oggettoIcona.type){
-                return true;
-            }
-            return false;
-    
-        });
-
-    }else{
-        alert("Errore critico! Contattare l'assistenza!!!");
-    }
-
-    drawIcons("icons_container", newIcone);
-
-  
-
-});
+filtraggioIcone();
