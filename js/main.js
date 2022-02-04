@@ -21,10 +21,8 @@ function drawIcons(riferimentoContainerHTML, ArrayIcone){
 //filtraggioIcone si occupa di effettuare il filtraggio delle icone 
 //in base al valore di select selezionato dall'utente
 function filtraggioIcone(){
-    const filtro = document.getElementById("filtro");
-    filtro.addEventListener("change", function(){
 
-        const valoreSelezionato = this.value;
+    const valoreSelezionato = this.value;
         let newIcone;
 
         if(valoreSelezionato == "tutti"){
@@ -45,7 +43,6 @@ function filtraggioIcone(){
 
         drawIcons("icons_container", newIcone);
 
-    });
 }
 
 const icone = [
@@ -175,4 +172,5 @@ drawIcons("icons_container", icone);
 
 
 //filtraggio delle icone visualizzate tramite select dall'utente
-filtraggioIcone();
+const filtro = document.getElementById("filtro");
+filtro.addEventListener("change", filtraggioIcone);
