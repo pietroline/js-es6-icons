@@ -71,7 +71,7 @@ function randomColor(){
     return ritorno;
 }
 
-
+ 
 
 const animalColor = randomColor();
 const vegetableColor = randomColor();
