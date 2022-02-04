@@ -45,6 +45,32 @@ function filtraggioIcone(){
 
 }
 
+
+//randomColor() si occupa di generare dei colori esadecimali random
+//il valore di ritorno è string
+function randomColor(){
+   
+    //ricordando Math.floor(Math.random() * (max - min + 1) + min); segue che 
+
+    let ritorno = "#";
+    for(let i=0; i<6; i++){
+    
+        const random = Math.round(Math.random()); //numero random tra 0 e 1
+
+        if(random == 1){
+            const numero = Math.floor(Math.random() * 10); //numero random tra 0 e 9
+            ritorno += numero;
+        }else{
+            const numeroLettera = Math.floor(Math.random() * 6 + 65); //numero compreso tra 65 e 70, codice ascii corrispondente da A a Z
+            const lettera = String.fromCharCode(numeroLettera);
+            ritorno += lettera;
+        }
+
+    }
+
+    return ritorno;
+}
+
 const icone = [
 	{
 		name: 'cat',
