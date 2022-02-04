@@ -76,6 +76,7 @@ function randomColor(){
 
 
 
+
 //select() popola dinamicamente il select nel DOM 
 function select(icons){
 
