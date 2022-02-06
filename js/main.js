@@ -25,25 +25,25 @@ function drawIcons(riferimentoContainerHTML, ArrayIcone){
 function filtraggioIcone(){
 
     const valoreSelezionato = this.value;
-        let newIcone;
+    let newIcone;
 
-        if(valoreSelezionato == "tutti"){
-            newIcone = icone;
-        }else if(valoreSelezionato == "animal" || valoreSelezionato == "user" || valoreSelezionato == "vegetable"){
-            newIcone =  icone.filter(oggettoIcona => {
+	if(valoreSelezionato == "tutti"){
+		newIcone = icone;
+	}else if(valoreSelezionato == "animal" || valoreSelezionato == "user" || valoreSelezionato == "vegetable"){
+		newIcone =  icone.filter(oggettoIcona => {
 
-                if(valoreSelezionato == oggettoIcona.type){
-                    return true;
-                }
-                return false;
-        
-            });
+			if(valoreSelezionato == oggettoIcona.type){
+				return true;
+			}
+			return false;
+	
+		});
 
-        }else{
-            alert("Errore critico! Contattare l'assistenza!!!");
-        }
+	}else{
+		alert("Errore critico! Contattare l'assistenza!!!");
+	}
 
-        drawIcons("icons_container", newIcone);
+	drawIcons("icons_container", newIcone);
 
 };
 
@@ -80,7 +80,7 @@ function randomColor(){
 //select() popola dinamicamente il select nel DOM 
 function select(icons){
 
-    typeArray = [];
+    let typeArray = [];
     for (let i=0; i<icons.length; i++){
         if(!typeArray.includes(icons[i].type)){
             typeArray[i] = icons[i].type;
@@ -97,7 +97,7 @@ function select(icons){
     });
 
     let option = `<option value="tutti">Tutti</option>`;
-    for(let i=0; i<3; i++){
+    for(let i=0; i<newTypeArray.length; i++){
         option +=   `
                         <option value="${newTypeArray[i]}">${newTypeArray[i]}</option>
                     `;
